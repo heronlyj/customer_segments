@@ -103,25 +103,50 @@
 # pca_results = vs.pca_results(good_data, pca)
 
 
-arr1 = [65, 6681, 95, 96, 128, 171, 193, 218, 304, 305, 338, 353, 355, 357, 412]
-arr2 = [86, 98, 154, 356]
-arr3 = [75, 154]
-arr4 = [38, 57, 65, 145, 175, 264, 325, 420, 429, 439]
-arr5 = [75, 161]
-arr6 = [66, 109, 128, 137, 142, 154, 183, 184, 187, 203, 233, 285, 289, 343]
+# arr1 = [65, 6681, 95, 96, 128, 171, 193, 218, 304, 305, 338, 353, 355, 357, 412]
+# arr2 = [86, 98, 154, 356]
+# arr3 = [75, 154]
+# arr4 = [38, 57, 65, 145, 175, 264, 325, 420, 429, 439]
+# arr5 = [75, 161]
+# arr6 = [66, 109, 128, 137, 142, 154, 183, 184, 187, 203, 233, 285, 289, 343]
 
-arr_result = []
-drop_result = []
+# arr_result = []
+# drop_result = []
 
-for a in [arr1, arr2, arr3, arr4, arr5, arr6]:
-    for item in a:
-        if item in arr_result and item not in drop_result:
-            drop_result.append(item)
-        elif item not in arr_result:
-            arr_result.append(item)
+# for a in [arr1, arr2, arr3, arr4, arr5, arr6]:
+#     for item in a:
+#         if item in arr_result and item not in drop_result:
+#             drop_result.append(item)
+#         elif item not in arr_result:
+#             arr_result.append(item)
 
-arr_result.sort()
-drop_result.sort()
+# arr_result.sort()
+# drop_result.sort()
 
-print(arr_result)
-print(drop_result)
+# print(arr_result)
+# print(drop_result)
+
+def getScore(componets):    
+    # clusterer = GaussianMixture(n_components=componets, covariance_type="full", random_state=42)
+    # clusterer.fit(X=reduced_data)
+
+    # # TODO：预测每一个点的簇
+    # preds = clusterer.predict(reduced_data)
+
+    # # TODO：找到聚类中心
+    # centers = clusterer.means_
+
+    # # TODO：预测在每一个转换后的样本点的类
+    # sample_preds = clusterer.predict(pca_samples)
+
+    # # TODO：计算选择的类别的平均轮廓系数（mean silhouette coefficient）
+    # score = silhouette_score(reduced_data, preds)
+    
+    return (componets, componets)
+
+for i in range(2,10):
+    (n, s) = getScore(i)
+    print("Componets is {} Sihoutte score is {}".format(n, s))
+
+
+
